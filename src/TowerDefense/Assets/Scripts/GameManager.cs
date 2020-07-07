@@ -234,7 +234,7 @@ public class GameManager : Singleton<GameManager>
     {
         activeEnemies--;
         //If there are no more enemies and the game isn't over, display the wave button
-        if (!waveActive && !gameOver)
+        if (!waveActive && !gameOver && activeEnemies == 0)
         {
             waveBtn.SetActive(true);
         }
@@ -313,13 +313,13 @@ public class GameManager : Singleton<GameManager>
         detailedTower.Detail();
         if (detailedTower.NextUpgrade != null)
         {
-            upgradeButton.interactable = true;
-            sellCostText.text = $"<color=#FFFECE>{detailedTower.SellCost}</color> <color=yellow>$</color>";
+            upgradeButton.interactable = true;           
             upgradeCostText.text = $"<color=#FFFECE>{detailedTower.NextUpgrade.Cost}</color> <color=yellow>$</color>";
         }
         else //Disable button if doesn't exist upgrade
             upgradeButton.interactable = false;
 
+        sellCostText.text = $"<color=#FFFECE>{detailedTower.SellCost}</color> <color=yellow>$</color>";
         upgradePanel.SetActive(true);
     }
 

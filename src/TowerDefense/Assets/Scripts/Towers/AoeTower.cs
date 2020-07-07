@@ -6,7 +6,7 @@ using UnityEngine;
 public class AoeTower : Tower
 {
     public int damage;
-    public int fireRate;
+    public float fireRate;
     private float nextActionTime = 0;
     Targetter targetter;
 
