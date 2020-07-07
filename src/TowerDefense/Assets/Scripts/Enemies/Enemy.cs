@@ -89,11 +89,8 @@ public class Enemy : MonoBehaviour
     /// </summary>
     private void Die()
     {
-        if (OnEnemyDeath != null)
-        {
-            OnEnemyDeath(this);
-            GameManager.Instance.Currency += this.currencyValue;
-        }
+        OnEnemyDeath?.Invoke(this);
+        GameManager.Instance.Currency += this.currencyValue;
         GameManager.Instance.RemoveEnemy();
         Destroy(gameObject);
     }
