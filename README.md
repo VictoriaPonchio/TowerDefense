@@ -12,4 +12,4 @@ Mini tower defense game.
 ## Keys: <br />
 **Esc:** Deselect tower <br />
 **Mouse:** Everything else <br />
-
+- Upgrade tower: Select a tower by clicking on it 
