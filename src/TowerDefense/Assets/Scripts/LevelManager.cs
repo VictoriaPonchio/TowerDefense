@@ -69,7 +69,7 @@ public class LevelManager : MonoBehaviour
     private string[] ReadLevelText()
     {
         TextAsset txtData = Resources.Load("Leve1") as TextAsset;
-        return txtData.text.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
+        return txtData.text.Replace("\r", "").Replace("\n", "").Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
     }
 
 
